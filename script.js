@@ -27,14 +27,11 @@ let season = [
   {"зима": "одень шубу и теплые штаны"},
   {"весна": "одень ветровку и джынсы"}
 ];
-//function (season) {
-  //  for(i = 0; i < season.length; i++){console.log(i)};
-//};
+const seasonsList = document.getElementById('seasons');
+const input = document.querySelector('input');
 
-let list = document.querySelector('select');
-list.addEventListener('change', function() {	
-	let item = list[list.selectedIndex];
-   // document.getElementByArtibute('value').innerHTML = "Tag: " + event.target.tagName;
-	list.nextElementSibling.innerHTML = list[list.selectedIndex].text;
-	console.log(list[list.selectedIndex]);
-});
+input.value = seasonsActionArr[seasonsList.value][seasonsList.options[seasonsList.selectedIndex].text.toLowerCase()];
+
+seasonsList.addEventListener ('change',function(){
+    input.value = seasonsActionArr[seasonsList.value][seasonsList.options[seasonsList.selectedIndex].text.toLowerCase()];
+    });
